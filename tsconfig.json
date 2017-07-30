@@ -20,7 +20,6 @@
     "target": "es5"
   },
   "include": [
-    "assets/**/*",
     "src/**/*"
   ]
 }

@@ -13,8 +13,8 @@ const config: webpack.Configuration = {
   devServer: {
     https: true,
     historyApiFallback: true,
-    port: 8082,
-    public: 'nerv.dev:8082',
+    port: 8084,
+    public: 'nerv.dev:8084',
     cert: readFile('../config/certs/dev.cert.pem'),
     key: readFile('../config/certs/dev.key.pem')
   },
