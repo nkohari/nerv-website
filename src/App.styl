@@ -16,7 +16,7 @@ html, body, #root
 
 h1
   font-family: $title-font
-  font-size: 80px
+  font-size: 7.5vw
   text-transform: uppercase
   text-align: center
   margin: 0px
@@ -25,6 +25,7 @@ h2
   font-size: 26px
   margin: 10px 0 0 0
   text-align: center
+  display: none
 
 .splash
   display: flex
@@ -40,61 +41,62 @@ h2
   position: absolute
   display: flex
   width: 100vw
+  height: 100vh
   align-items: center
   justify-content: center
 
   .ring0
     position: absolute
-    height: 250px
-    width: 250px
-    fill: $red
+    width: 50vw
+    height: 50vh
+    fill: $teal
     transform-origin: 50% 50%
     animation: spin-cw 10s infinite linear
 
   .ring1
     position: absolute
-    height: 350px
-    width: 350px
-    fill: $teal
+    width: 70vw
+    height: 70vh
+    fill: $red
     transform-origin: 50% 50%
     animation: spin-ccw 10s infinite linear
 
   .ring2
     position: absolute
-    height: 480px
-    width: 480px
-    fill: $red
+    width: 90vw
+    height: 90vh
+    fill: $teal
     transform-origin: 50% 50%
     animation: spin-cw 10s infinite linear
 
-  .ring3
+  .reticle
     position: absolute
-    height: 650px
-    width: 650px
-    fill: $teal
+    width: 100vw
+    height: 100vh
+    fill: lightness($teal, 15%)
 
   .wave0
     position: absolute
-    height: 400px
-    width: 400px
-    fill: #808080
+    width: 70vw
+    height: 70vh
+    fill: $teal
 
   .circuit0
     position: absolute
-    height: 250px
-    width: 250px
-    fill: $teal
+    width: 50vw
+    height: 50vh
+    fill: lightness($teal, 40%)
 
   .circuit1
     position: absolute
-    height: 250px
-    width: 250px
-    fill: $red
+    width: 50vw
+    height: 50vh
+    fill: lightness($red, 40%)
 
   .boxes
     position: absolute
-    height: 800px
-    width: 800px
+    width: 120vw
+    height: 120vh
     fill: $red
     transform-origin: 50% 50%
     animation: spin-ccw 20s infinite linear
