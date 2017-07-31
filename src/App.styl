@@ -16,7 +16,7 @@ html, body, #root
 
 h1
   font-family: $title-font
-  font-size: 7.5vw
+  font-size: 10vh
   text-transform: uppercase
   text-align: center
   margin: 0px
@@ -44,6 +44,7 @@ h2
   height: 100vh
   align-items: center
   justify-content: center
+  background: radial-gradient(#000000, #111111)
 
   .ring0
     position: absolute
@@ -51,7 +52,7 @@ h2
     height: 50vh
     fill: $teal
     transform-origin: 50% 50%
-    animation: spin-cw 10s infinite linear
+    animation: spin-cw 60s infinite linear
 
   .ring1
     position: absolute
@@ -59,7 +60,7 @@ h2
     height: 70vh
     fill: $red
     transform-origin: 50% 50%
-    animation: spin-ccw 10s infinite linear
+    animation: spin-ccw 60s infinite linear
 
   .ring2
     position: absolute
@@ -67,7 +68,7 @@ h2
     height: 90vh
     fill: $teal
     transform-origin: 50% 50%
-    animation: spin-cw 10s infinite linear
+    animation: spin-cw 60s infinite linear
 
   .reticle
     position: absolute
@@ -79,19 +80,19 @@ h2
     position: absolute
     width: 70vw
     height: 70vh
-    fill: $teal
+    fill: #cccccc
 
   .circuit0
     position: absolute
     width: 50vw
     height: 50vh
-    fill: lightness($teal, 40%)
+    fill: #666666
 
   .circuit1
     position: absolute
     width: 50vw
     height: 50vh
-    fill: lightness($red, 40%)
+    fill: #cccccc
 
   .boxes
     position: absolute
@@ -99,7 +100,7 @@ h2
     height: 120vh
     fill: $red
     transform-origin: 50% 50%
-    animation: spin-ccw 20s infinite linear
+    animation: spin-ccw 30s infinite linear
 
 @keyframes spin-cw {
   0% { transform: rotate(0deg);}
