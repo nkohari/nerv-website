@@ -1,0 +1,74 @@
+.splash-animation
+  position: absolute
+  display: flex
+  width: 100vw
+  height: 100vh
+  align-items: center
+  justify-content: center
+  background: radial-gradient(#000000, #111111)
+
+  .ring0
+    position: absolute
+    width: 50vw
+    height: 50vh
+    fill: $teal
+    rotate-ccw: 60s
+
+  .ring1
+    position: absolute
+    width: 70vw
+    height: 70vh
+    fill: $red
+    rotate-cw: 60s
+
+  .ring2
+    position: absolute
+    width: 90vw
+    height: 90vh
+    fill: $teal
+    rotate-ccw: 60s
+
+  .reticle
+    position: absolute
+    width: 100vw
+    height: 100vh
+    fill: lightness($teal, 15%)
+
+  .wave
+    position: absolute
+    width: 70vw
+    height: 70vh
+
+    &.wave0
+      fill: $white
+      rotate-cw: 20s
+      display: none
+
+    &.wave1
+      fill: $white
+      rotate-cw: 30s
+
+    &.wave2
+      fill: $white
+      rotate-cw: 40s
+
+    &.wave3
+      fill: $white
+      rotate-cw: 50s
+
+  .circuit
+    position: absolute
+    width: 50vw
+    height: 50vh
+    transition: fill .5s ease
+    fill: $teal
+
+    &.bad
+      fill: $red
+
+  .boxes
+    position: absolute
+    width: 120vw
+    height: 120vh
+    fill: $red
+    rotate-cw: 30s

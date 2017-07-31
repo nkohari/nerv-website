@@ -15,7 +15,7 @@ export const entry = {
 export const output = {
   path: path.resolve(__dirname, '../dist'),
   publicPath: '/',
-  filename: '[name].js'
+  filename: '[hash]/[name].js'
 };
 
 export const rules = [

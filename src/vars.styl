@@ -1,8 +1,35 @@
 $font = 'Open Sans', sans-serif;
 $title-font = 'Oswald', sans-serif;
 
-$white = #ffffff
-$black = #000000
 $teal = #00cccc
 $red = #ff0066
 $purple = #b83c82
+$black = #000000
+$white = #ffffff
+
+rotate-cw($speed)
+  transform-origin: 50% 50%
+  animation: spin-cw $speed infinite linear
+
+rotate-ccw($speed)
+  transform-origin: 50% 50%
+  animation: spin-ccw $speed infinite linear
+
+bounce($speed)
+  animation: bounce $speed infinite linear
+
+@keyframes spin-cw {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes spin-ccw {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(10px); }
+  100% { transform: translateY(0px); }
+}
