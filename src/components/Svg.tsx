@@ -16,7 +16,7 @@ class Svg extends React.Component<SvgProps> {
     const { src, className } = this.props;
 
     const props = {
-      className: classNames('svg-icon', className)
+      className: classNames('svg', className)
     };
 
     return React.createElement(src, props as any);

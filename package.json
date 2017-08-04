@@ -17,6 +17,7 @@
   "license": "MIT",
   "dependencies": {
     "classnames": "^2.2.5",
+    "flexboxgrid": "^6.3.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "svg-react-loader": "^0.4.4"
@@ -38,6 +39,7 @@
     "style-loader": "0.17.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
+    "svgo": "^0.7.2",
     "ts-loader": "^2.2.1",
     "ts-node": "^3.1.0",
     "tslint": "^5.4.3",

@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { SplashAnimation, SplashText } from './components';
+import { Splash } from './components';
+import { AppSection, DashboardSection, PlatformSection, RemoteControlSection } from './sections';
 import './App.styl';
 
 class App extends React.Component {
@@ -7,9 +8,12 @@ class App extends React.Component {
   render() {
     return (
       <div className='app'>
-        <div className='splash'>
-          <SplashAnimation />
-          <SplashText />
+        <Splash />
+        <div>
+          <PlatformSection />
+          <AppSection />
+          <DashboardSection />
+          <RemoteControlSection />
         </div>
       </div>
     );

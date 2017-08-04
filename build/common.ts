@@ -32,6 +32,17 @@ export const rules = [
   }
 ];
 
+export const loaders = {
+  stylus: {
+    loader: 'stylus-loader',
+    options: {
+      import: [
+        path.resolve(__dirname, '../src/vars.styl')
+      ]
+    }
+  }
+};
+
 export const plugins = [
   new HtmlWebpackPlugin({
     filename: 'index.html',
