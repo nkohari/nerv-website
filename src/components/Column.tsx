@@ -10,7 +10,6 @@ interface ColumnProps {
   lg?: string;
   xl?: string;
   className?: string;
-  type?: string;
   flex?: boolean;
 }
 
@@ -23,11 +22,10 @@ class Column extends React.Component<ColumnProps> {
   }
 
   render() {
-    const { className, flex, type, children } = this.props;
+    const { className, flex, children } = this.props;
 
     const classes = classNames(
       'col',
-      type && `col-${type}`,
       flex && 'col-flex',
       SIZES.map(size => this.getClassesForSize(size)),
       className

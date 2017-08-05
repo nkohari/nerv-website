@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Row, Column, Section, Svg } from '../components';
+import { Row, Column, Section, RemoteControlDiagram } from '../components';
 
 class RemoteControlSection extends React.Component {
 
@@ -7,22 +7,20 @@ class RemoteControlSection extends React.Component {
     return (
       <Section>
         <Row xs='center'>
-          <Column type='text' xs='12'>
+          <Column xs='10'>
             <h3>Secure Remote Control</h3>
             <p>
-              When you set up the Nerv App on your mining machine, you can provide
-              a secret phrase that's known only to you. You can link this secret
-              phrase to a TOTP token generator like a Yubikey or an app like Authy
-              or Google Authenticator. When you want to execute a command on the
-              remote machine, you must provide a TOTP token, which is sent with
-              the command and verified by the Nerv App on the mining machine itself.
-              Your secret is never entered into or stored on the Nerv servers,
-              so even if someone compromised your account or our system, they still
-              couldn't remotely control your mining machines.
+              When you set up the Nerv App on your mining machine, you can link it
+              to a TOTP token generator like a Yubikey or an app like Authy or
+              Google Authenticator. To execute a remote command on the mining machine,
+              you must provide a TOTP token, which is sent with the command and verified
+              by the Nerv App on the mining machine itself. The Nerv servers aren't
+              in charge of verifying your TOTP token, so even if your account is
+              compromised, your machines can't be remotely controlled by anyone else.
             </p>
           </Column>
           <Column xs='12'>
-            <Svg src={require('assets/images/remote-control.svg')} />
+            <RemoteControlDiagram />
           </Column>
         </Row>
       </Section>

@@ -5,7 +5,7 @@ import './PlatformDiagram.styl';
 class PlatformDiagram extends React.Component {
 
   render() {
-    return <Svg src={require('assets/images/nerv-platform.svg')} className='nerv-platform' />;
+    return <Svg src={require('assets/images/diagrams/platform.svg')} className='platform-diagram' />;
   }
 
 }

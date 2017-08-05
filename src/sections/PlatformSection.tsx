@@ -7,7 +7,7 @@ class OverviewSection extends React.Component {
     return (
       <Section color='blue-grey'>
         <Row xs='center middle' xl='start'>
-          <Column type='text' xs='12' xl='4'>
+          <Column xs='12' xl='4'>
             <h3>The Nerv Platform</h3>
             <p>
               Nerv is a cloud platform that allows cryptocurrency miners to remotely monitor

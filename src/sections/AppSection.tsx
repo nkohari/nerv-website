@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Row, Column, Section, Svg } from '../components';
+import { Row, Column, Section } from '../components';
 
 class AppSection extends React.Component {
 
@@ -7,7 +7,7 @@ class AppSection extends React.Component {
     return (
       <Section color='blue'>
         <Row>
-          <Column type='text' xs='6'>
+          <Column xs='6'>
             <h3>Nerv App</h3>
             <p>
               The Nerv app is a GUI that manages the mining software you're already using.
@@ -20,9 +20,6 @@ class AppSection extends React.Component {
               also available as open source under the Mozilla Public License, so you can see
               exactly what's running on your machines.
             </p>
-          </Column>
-          <Column type='browser' xs='6'>
-            <Svg src={require('assets/images/browser.svg')} />
           </Column>
         </Row>
       </Section>

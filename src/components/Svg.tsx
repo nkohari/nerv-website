@@ -3,20 +3,18 @@ import * as classNames from 'classnames';
 
 interface SvgProps {
   src: React.ComponentClass;
+  style?: object;
   className?: string;
 }
 
 class Svg extends React.Component<SvgProps> {
 
-  static defaultProps = {
-    size: 'standard'
-  };
-
   render() {
-    const { src, className } = this.props;
+    const { src, className, style } = this.props;
 
     const props = {
-      className: classNames('svg', className)
+      className: classNames('svg', className),
+      style
     };
 
     return React.createElement(src, props as any);

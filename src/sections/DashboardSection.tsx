@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Row, Column, Section, Svg } from '../components';
+import { Row, Column, Section } from '../components';
 
 class DashboardSection extends React.Component {
 
@@ -7,7 +7,7 @@ class DashboardSection extends React.Component {
     return (
       <Section color='deep-purple'>
         <Row>
-          <Column type='text' xs='6'>
+          <Column xs='6'>
             <h3>The Nerv Dashboard</h3>
             <p>
               From the Nerv dashboard, you can see a real-time view of all of the metrics
@@ -22,9 +22,6 @@ class DashboardSection extends React.Component {
               your hashrate dips too low or your temperature climbs too high. Crank your overclock
               as hard as you want, and Nerv will let you know if anything goes wrong.
             </p>
-          </Column>
-          <Column type='browser' xs='6'>
-            <Svg src={require('assets/images/browser.svg')} />
           </Column>
         </Row>
       </Section>

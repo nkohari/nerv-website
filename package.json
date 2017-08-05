@@ -11,6 +11,7 @@
     "build": "NODE_ENV=production node -r ts-node/register ./node_modules/.bin/webpack --progress --optimize-minimize --config ./build/webpack.config.production.ts",
     "dev": "NODE_ENV=development node -r ts-node/register ./node_modules/.bin/webpack-dev-server --hot --config ./build/webpack.config.development.ts",
     "clean": "rimraf dist",
+    "svgo": "svgo -f assets/images --pretty --indent=2 --enable=removeTitle --enable=removeDimensions",
     "deploy": "npm run build && s3-deploy './dist/**' --cwd './dist/' --gzip --region us-east-1 --bucket nerv.io"
   },
   "author": "Nate Kohari",
@@ -20,6 +21,7 @@
     "flexboxgrid": "^6.3.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
+    "react-waypoint": "^7.0.4",
     "svg-react-loader": "^0.4.4"
   },
   "devDependencies": {

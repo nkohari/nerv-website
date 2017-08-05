@@ -7,7 +7,7 @@ class SecuritySection extends React.Component {
     return (
       <Section>
         <Row>
-          <Column type='text' xs='8'>
+          <Column xs='8'>
             <h3>Safe and Secure</h3>
             <ol>
               <li>We don't want your wallet information or your private key.</li>
