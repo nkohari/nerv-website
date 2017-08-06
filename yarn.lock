@@ -3176,6 +3176,10 @@ schema-utils@^0.3.0:
   dependencies:
     ajv "^5.0.0"
 
+scroll-into-view@^1.9.0:
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/scroll-into-view/-/scroll-into-view-1.9.0.tgz#b998b72bd4067bd3accc545a5828664c791f773d"
+
 select-hose@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/select-hose/-/select-hose-2.0.0.tgz#625d8658f865af43ec962bfc376a37359a4994ca"

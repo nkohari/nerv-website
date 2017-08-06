@@ -1,19 +1,51 @@
 .platform-diagram
-  flex: 1
-  max-height: 320px
-  font-family: $title-font
+  height: 350px
 
   .nerv-app
     fill: $white
 
+  .mining-hardware, .mining-software
+    fill: $white
+
   .nerv-api
-    .nerv-api-icon
-      fill: $white
-    .nerv-api-circle
+    .circle
       stroke: $white
+    .brain
+      fill: $white
 
   .nerv-dashboard
     fill: $white
 
   .connectors
     stroke: blue-grey(400)
+
+  .notifications
+    fill: white(0%)
+    transition: all 1s ease-in 10s
+
+  .notifications-connector
+    stroke: alpha(blue-grey(400), 0%)
+    transition: all 1s ease-in 10s
+
+  text
+    font-size: 1.5rem
+    fill: white(0%)
+    transition-property: fill
+    transition-duration: 1s
+    transition-timing-function: ease-in
+    &.caption-0
+      transition-delay: 1s
+    &.caption-1
+      transition-delay: 4s
+    &.caption-2
+      transition-delay: 7s
+    &.caption-3
+      transition-delay: 10s
+
+  &.visible
+    text
+      fill: white(100%)
+    .notifications
+      fill: white(100%)
+    .notifications-connector
+      stroke: blue-grey(400)

@@ -5,7 +5,7 @@ class OverviewSection extends React.Component {
 
   render() {
     return (
-      <Section color='blue-grey'>
+      <Section id='platform' color='blue-grey'>
         <Row xs='center middle' xl='start'>
           <Column xs='12' xl='4'>
             <h3>The Nerv Platform</h3>

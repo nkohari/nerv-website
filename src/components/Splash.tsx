@@ -1,16 +1,17 @@
 import * as React from 'react';
 import * as Waypoint from 'react-waypoint';
 import * as classNames from 'classnames';
+import * as scrollIntoView from 'scroll-into-view';
 import Svg from './Svg';
 import './Splash.styl';
 
 const CIRCUIT_COUNT = 12;
 const CIRCUIT_CHANGE_DELAY = 2000;
-const chooseBadCircuit = () => Math.floor(Math.random() * CIRCUIT_COUNT); // tslint:disable-line:insecure-random
+const chooseRedCircuit = () => Math.floor(Math.random() * CIRCUIT_COUNT); // tslint:disable-line:insecure-random
 
 interface SplashState {
   visible: boolean;
-  badCircuit: Number;
+  redCircuit: number;
 }
 
 class Splash extends React.Component<{}, SplashState> {
@@ -19,7 +20,7 @@ class Splash extends React.Component<{}, SplashState> {
 
   constructor(props) {
     super(props);
-    this.state = { visible: false, badCircuit: chooseBadCircuit() };
+    this.state = { visible: false, redCircuit: chooseRedCircuit() };
   }
 
   componentWillUnmount() {
@@ -35,7 +36,7 @@ class Splash extends React.Component<{}, SplashState> {
   }
 
   onIntervalTick = () => {
-    this.setState((prevState, props) => ({ badCircuit: chooseBadCircuit() }));
+    this.setState((prevState, props) => ({ redCircuit: chooseRedCircuit() }));
   }
 
   onEnter = evt => {
@@ -48,34 +49,21 @@ class Splash extends React.Component<{}, SplashState> {
     this.setState((prevState, props) => ({ visible: false }));
   }
 
+  onLinkClicked = evt => {
+    const el = document.getElementsByTagName('main')[0];
+    scrollIntoView(el);
+  }
+
   render() {
-    const { badCircuit, visible } = this.state;
-
-    const circuits = [];
-    for (let i = 0; i < CIRCUIT_COUNT; i++) {
-      const classes = classNames('circuit', { bad: badCircuit === i });
-      circuits.push(<Svg key={i} src={require(`assets/images/splash/circuit${i}.svg`)} className={classes} />); // tslint:disable-line:non-literal-require
-    }
-
+    const { redCircuit, visible } = this.state;
     return (
       <Waypoint onEnter={this.onEnter} onLeave={this.onLeave}>
-        <div className={classNames('splash', { visible })}>
-          <div className='splash-animation'>
-            <Svg src={require('assets/images/splash/reticle.svg')} className='reticle' />
-            <Svg src={require('assets/images/splash/ring0.svg')} className='ring0' />
-            {circuits}
-            <Svg src={require('assets/images/splash/ring1.svg')} className='ring1' />
-            <Svg src={require('assets/images/splash/ring2.svg')} className='ring2' />
-            <Svg src={require('assets/images/splash/wave0.svg')} className='wave wave0' />
-            <Svg src={require('assets/images/splash/wave1.svg')} className='wave wave1' />
-            <Svg src={require('assets/images/splash/wave2.svg')} className='wave wave2' />
-            <Svg src={require('assets/images/splash/wave3.svg')} className='wave wave3' />
-            <Svg src={require('assets/images/splash/boxes.svg')} className='boxes' />
-            <div className='splash-animation-overlay' />
-          </div>
+        <div className={classNames('splash', `circuit-${redCircuit}-red`, { visible })}>
+          <Svg src={require('assets/images/splash.svg')} className='splash-image' />
+          <div className='splash-animation-overlay' />
           <div className='splash-text'>
             <h1>Nerv</h1>
-            <a href='#'>
+            <a onClick={this.onLinkClicked}>
               <h2>
                 Monitor and manage<br/>
                 your crypto mining operation<br/>

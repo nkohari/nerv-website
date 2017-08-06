@@ -1,21 +1,18 @@
 .splash
   position: relative
   display: flex
-  width: 100%
   height: 100vh
   overflow: hidden
   align-items: center
   justify-content: center
 
-  .splash-animation
-    position: absolute
-    display: flex
+  .splash-image
+    z-index: 0
+    flex: none
     width: 100%
-    height: 100vh
-    align-items: center
-    justify-content: center
 
   .splash-animation-overlay
+    z-index: 1
     position: absolute
     top: 0
     left: 0
@@ -24,69 +21,51 @@
     background: linear-gradient(black(0.7) 10%, transparent 40%, transparent 60%, black(0.7) 90%)
 
   .ring0
-    position: absolute
-    width: 50vw
-    height: 50vh
     fill: $teal
     ~/.visible .ring0
       rotate-ccw: 60s
 
   .ring1
-    position: absolute
-    width: 70vw
-    height: 70vh
     fill: $pink
     ~/.visible .ring1
       rotate-cw: 60s
 
   .ring2
-    position: absolute
-    width: 90vw
-    height: 90vh
     fill: $teal
     ~/.visible .ring2
       rotate-ccw: 60s
 
   .reticle
-    position: absolute
-    width: 100vw
-    height: 100vh
     fill: teal(900)
 
-  .wave
-    position: absolute
-    width: 70vw
-    height: 70vh
+  .wave0
+    fill: $grey
+    ~/.visible .wave0
+      rotate-cw: 20s
 
-    &.wave0
-      fill: $grey
-      ~/.visible .wave0
-        rotate-cw: 20s
+  .wave1
+    fill: $grey
+    ~/.visible .wave1
+      rotate-cw: 30s
 
-    &.wave1
-      fill: $grey
-      ~/.visible .wave1
-        rotate-cw: 30s
+  .wave2
+    fill: $grey
+    ~/.visible .wave2
+      rotate-cw: 40s
 
-    &.wave2
-      fill: $grey
-      ~/.visible .wave2
-        rotate-cw: 40s
-
-    &.wave3
-      fill: $grey
-      ~/.visible .wave3
-        rotate-cw: 50s
+  .wave3
+    fill: $grey
+    ~/.visible .wave3
+      rotate-cw: 50s
 
   .circuit
-    position: absolute
-    width: 50vw
-    height: 50vh
     transition: fill .5s ease
     fill: $teal
 
-    &.bad
-      fill: $pink
+  for $circuit in (0 1 2 3 4 5 6 7 8 9 10 11)
+    &.circuit-{$circuit}-red
+      .circuit{$circuit}
+        fill: $pink
 
   .boxes
     position: absolute
@@ -97,17 +76,19 @@
       rotate-cw: 30s
 
   .splash-text
+    z-index: 2
     position: absolute
-    width: 100vw
-    height: 100vh
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
     display: flex
     align-items: center
     justify-content: center
 
     h1
-      position: absolute
       font-family: $title-font
-      font-weight: 700
+      font-weight: 600
       font-size: 16vh
       text-transform: uppercase
       text-align: center
@@ -118,9 +99,11 @@
 
     a
       display: block
-      width: 100%
       position: absolute
+      left: 0
+      right: 0
       bottom: 0
+      cursor: pointer
       text-align: center
       color: $white
       text-decoration: none

@@ -5,12 +5,13 @@ import './Section.styl';
 interface SectionProps {
   color?: Color;
   className?: string;
+  id?: string;
 }
 
 class Section extends React.Component<SectionProps> {
 
   render() {
-    const { className, color, children } = this.props;
+    const { className, color, id, children } = this.props;
 
     const classes = classNames(
       'section',
@@ -19,7 +20,7 @@ class Section extends React.Component<SectionProps> {
     );
 
     return (
-      <section className={classes}>
+      <section id={id} className={classes}>
         {children}
       </section>
     );
